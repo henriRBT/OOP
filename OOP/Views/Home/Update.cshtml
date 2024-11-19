@@ -1,0 +1,53 @@
+﻿@model OOP.Models.Clients
+@{
+    ViewData["Title"] = "Update Page";
+}
+
+<h1>Admnistrator Clients Update</h1>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form asp-action="Update">
+           <input type="hidden" asp-for="Id"/>
+            <div class="form-group">
+                <label asp-for="Nama" class="control-label"></label>
+                <input asp-for="Nama" class="form-control" />
+                <span asp-validation-for="Nama" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="telepon" class="control-label"></label>
+                <input asp-for="telepon" class="form-control" />
+                <span asp-validation-for="telepon" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="negara" class="control-label"></label>
+                <input asp-for="negara" class="form-control" />
+                <span asp-validation-for="negara" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="tanggal" class="control-label"></label>
+                <input asp-for="tanggal" class="form-control" />
+                <span asp-validation-for="tanggal" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="col-6">
+                    <input type="submit" value="Update Client" class="btn btn-primary form-control" />
+                </div>
+                <div class="col-6">
+                    <a asp-action="Index" class="btn btn-warning form-control">Back To List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

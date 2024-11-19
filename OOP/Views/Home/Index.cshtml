@@ -1,0 +1,42 @@
+﻿@model IEnumerable<OOP.Models.Clients>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Admnistrator Clients</h1>
+<p > 
+    <a asp-action="Create" class="btn btn-primary">Clients</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model=>model.Nama)</th>
+            <th>@Html.DisplayNameFor(model => model.email)</th>
+            <th>@Html.DisplayNameFor(model=>model.telepon)</th>
+            <th>@Html.DisplayNameFor(model => model.negara)</th>
+            <th>@Html.DisplayNameFor(model => model.tanggal)</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+				<tr>
+                    <th>@Html.DisplayFor(modelitem => item.Id)</th>
+                    <th>@Html.DisplayFor(modelitem => item.Nama)</th>
+                    <th>@Html.DisplayFor(modelitem => item.email)</th>
+                    <th>@Html.DisplayFor(modelitem => item.telepon)</th>
+                    <th>@Html.DisplayFor(modelitem => item.negara)</th>
+                    <th>@Html.DisplayFor(modelitem => item.tanggal)</th>
+					<td>
+						<a asp-action="Update" asp-route-id="@item.Id" class="btn btn-info">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+            }
+        }
+    </tbody>
+</table>
